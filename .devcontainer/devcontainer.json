@@ -6,8 +6,7 @@
   //  }
   "image": "mcr.microsoft.com/devcontainers/base:debian",
   // Map random port from host to container's 2222 and name the docker container
-  "runArgs": ["-p", "0:2222", "--name", "dev-kube-homelab"],
-  "forwardPorts": [9090],
+  "runArgs": ["-p", "0:2222", "-p", "9090:9090", "--name", "dev-kube-homelab"],
   "mounts": [
     {
       "source": "${localEnv:HOME}/.ssh/id_ed25519.pub",
