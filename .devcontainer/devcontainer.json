@@ -1,23 +1,9 @@
 // devcontainer.json
 {
   "name": "devcontainer-kube-homelab",
-  //  "build": {
-  //    "dockerfile": "Dockerfile",
-  //  }
   "image": "mcr.microsoft.com/devcontainers/base:debian",
   // Map random port from host to container's 2222 and name the docker container
-  "runArgs": ["-p", "0:2222", "-p", "9090:9090", "--name", "dev-kube-homelab"],
   "mounts": [
-    {
-      "source": "${localEnv:HOME}/.ssh/id_ed25519.pub",
-      "target": "/tmp/id_ed25519.pub",
-      "type": "bind"
-    },
-    {
-      "source": "${localEnv:SSH_AUTH_SOCK}",
-      "target": "/ssh-agent",
-      "type": "bind"
-    },
     {
       "source": "${localEnv:HOME}/.kube",
       "target": "/home/vscode/.kube",
@@ -25,13 +11,6 @@
     }
   ],
   "features": {
-    // Open-SSH server that will run on port 2222
-    "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
-  },
-  "remoteEnv": {
-    "SSH_AUTH_SOCK": "/ssh-agent"
-  },
-  // Execute the setup.sh script after container build
-  "postCreateCommand": "bash .devcontainer/setup.sh"
+  }
 }
