@@ -1,0 +1,12 @@
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: linkding
+spec:
+  selector:
+    app: linkding
+  ports:
+    - port: 9090
+  type: ClusterIP
+
