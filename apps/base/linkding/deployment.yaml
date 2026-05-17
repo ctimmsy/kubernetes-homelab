@@ -26,6 +26,17 @@ spec:
               name: linkding-data
           securityContext:
             allowPrivilegeEscalation: false
+          env:
+          - name: LD_SUPERUSER_NAME
+            valueFrom:
+              secretKeyRef:
+                name: ld-admin-credentials
+                key: username
+          - name: LD_SUPERUSER_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: ld-admin-credentials
+                key: password
       volumes:
         - name: linkding-data
           persistentVolumeClaim:
