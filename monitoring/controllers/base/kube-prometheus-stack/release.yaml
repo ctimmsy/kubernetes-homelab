@@ -39,7 +39,8 @@ spec:
         ##
         # hosts:
         #   - grafana.domain.com
-        hosts: [grafana.ctimms.net]
+        hosts: 
+          - grafana.ctimms.net
 
         ## Path for grafana ingress
         path: /
