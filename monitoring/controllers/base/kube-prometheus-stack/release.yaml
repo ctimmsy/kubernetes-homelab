@@ -33,7 +33,7 @@ spec:
       adminPassword: mischa
       ingress:
         enabled: true
-        ingressClassName: nginx
+        ingressClassName: traefik
         ## Hostnames.
         ## Must be provided if Ingress is enable.
         ##
