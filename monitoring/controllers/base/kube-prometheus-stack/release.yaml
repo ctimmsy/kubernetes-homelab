@@ -28,6 +28,11 @@ spec:
       - paths: ["/metadata/annotations/prometheus-operator-validated"]
         target:
           kind: PrometheusRule
+  valuesFrom:
+    - kind: Secret
+      name: tls-grafana
+      valuesKey: tls.cert
+      targetPath: grafana.ingress.tls
   values:
     grafana:
       adminPassword: mischa
@@ -44,10 +49,3 @@ spec:
 
         ## Path for grafana ingress
         path: /
-
-        ## TLS configuration for grafana Ingress
-        ## Secret must be manually created in the namespace
-        ##
-        tls:
-          - certs-grafana
-
