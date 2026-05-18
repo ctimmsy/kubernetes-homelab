@@ -32,7 +32,7 @@ spec:
     grafana:
       adminPassword: mischa
       ingress:
-        enabled: enable
+        enabled: true
         ingressClassName: nginx
         ## Hostnames.
         ## Must be provided if Ingress is enable.
