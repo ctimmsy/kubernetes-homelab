@@ -31,7 +31,7 @@ spec:
   valuesFrom:
     - kind: Secret
       name: tls-grafana
-      valuesKey: tls.cert
+      valuesKey: tls.crt
       targetPath: grafana.ingress.tls
   values:
     grafana:
