@@ -28,11 +28,6 @@ spec:
       - paths: ["/metadata/annotations/prometheus-operator-validated"]
         target:
           kind: PrometheusRule
-  valuesFrom:
-    - kind: Secret
-      name: tls-grafana
-      valuesKey: tls.crt
-      targetPath: grafana.ingress.tls
   values:
     grafana:
       adminPassword: mischa
@@ -49,3 +44,7 @@ spec:
 
         ## Path for grafana ingress
         path: /
+        tls: 
+          - secretName: tls-grafana
+            hosts:
+            - grafana.example.com
