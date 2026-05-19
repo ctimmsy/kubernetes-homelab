@@ -20,7 +20,7 @@ spec:
         - name: audiobookshelf
           image: ghcr.io/advplyr/audiobookshelf:2.35.0
           envFrom:
-            - configMap:
+            - configMapRef:
                 name: audiobookshelf-configmap
             # - secretRef:
             #     name: ld-credentials-env
