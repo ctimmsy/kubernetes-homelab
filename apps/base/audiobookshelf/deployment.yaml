@@ -19,6 +19,8 @@ spec:
       containers:
         - name: audiobookshelf
           image: ghcr.io/advplyr/audiobookshelf:2.35.0
+          command: ["chown"]
+          args: ["1000:1000", "/app"]
           envFrom:
             - configMapRef:
                 name: audiobookshelf-configmap
