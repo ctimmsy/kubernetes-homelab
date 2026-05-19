@@ -26,12 +26,32 @@ spec:
             #     name: ld-credentials-env
           ports:
             - containerPort: 3005
-          # volumeMounts:
-          #   - mountPath: "/etc/audiobookshelf/data"
-          #     name: audiobookshelf-data
-          # securityContext:
-          #   allowPrivilegeEscalation: false
-      # volumes:
-      #   - name: audiobookshelf-data
-      #     persistentVolumeClaim:
-      #       claimName: audiobookshelf-data-pvc
+          volumeMounts:
+            - mountPath: "/config"
+              name: audiobookshelf-config
+            - mountPath: "/metadata"
+              name: audiobookshelf-metadata
+            - mountPath: "/audiobooks"
+              name: audiobookshelf-audiobooks
+            - mountPath: "/books"
+              name: audiobookshelf-books
+            - mountPath: "/podcasts"
+              name: audiobookshelf-podcasts
+          securityContext:
+            allowPrivilegeEscalation: false
+      volumes:
+        - name: audiobookshelf-config
+          persistentVolumeClaim:
+            claimName: audiobookshelf-config
+        - name: audiobookshelf-metadata
+          persistentVolumeClaim:
+            claimName: audiobookshelf-metadata
+        - name: audiobookshelf-audiobooks
+          persistentVolumeClaim:
+            claimName: audiobookshelf-audiobooks
+        - name: audiobookshelf-books
+          persistentVolumeClaim:
+            claimName: audiobookshelf-books
+        - name: audiobookshelf-podcasts
+          persistentVolumeClaim:
+            claimName: audiobookshelf-podcasts
