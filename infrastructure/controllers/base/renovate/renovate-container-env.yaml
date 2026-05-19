@@ -3,7 +3,7 @@ data:
     RENOVATE_TOKEN: ENC[AES256_GCM,data:pRgxSxMbt5uaUnFfF/WzcbxtkZl3N+E3D+IsZ6MBBhRgF/j1ugScDC/g+MVHAoaHJfUY2hUxAos=,iv:lScP867Q6MMJZs8CrJIwbYWslTKm7gpyhqEMEOf922I=,tag:V1PpUKXs/uZ3Cm/CcKqzdA==,type:str]
 kind: Secret
 metadata:
-    name: renovate
+    name: renovate-container-env
 sops:
     age:
         - enc: |
