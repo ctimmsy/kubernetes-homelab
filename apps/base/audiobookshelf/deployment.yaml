@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: audiobookshelf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: audiobookshelf
+  template:
+    metadata:
+      labels:
+        app: audiobookshelf
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+        - name: audiobookshelf
+          image: ghcr.io/advplyr/audiobookshelf:v2.35.0
+          # envFrom:
+          #   - secretRef:
+          #       name: ld-credentials-env
+          ports:
+            - containerPort: 3005
+          # volumeMounts:
+          #   - mountPath: "/etc/audiobookshelf/data"
+          #     name: audiobookshelf-data
+          # securityContext:
+          #   allowPrivilegeEscalation: false
+      # volumes:
+      #   - name: audiobookshelf-data
+      #     persistentVolumeClaim:
+      #       claimName: audiobookshelf-data-pvc
