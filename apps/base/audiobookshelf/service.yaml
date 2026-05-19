@@ -1,0 +1,12 @@
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: audiobookshelf
+spec:
+  selector:
+    app: audiobookshelf
+  ports:
+    - port: 3005
+  type: ClusterIP
+

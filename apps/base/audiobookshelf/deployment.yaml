@@ -19,9 +19,11 @@ spec:
       containers:
         - name: audiobookshelf
           image: ghcr.io/advplyr/audiobookshelf:2.35.0
-          # envFrom:
-          #   - secretRef:
-          #       name: ld-credentials-env
+          envFrom:
+            - configMap:
+                name: audiobookshelf-configmap
+            # - secretRef:
+            #     name: ld-credentials-env
           ports:
             - containerPort: 3005
           # volumeMounts:
