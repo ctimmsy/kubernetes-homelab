@@ -24,8 +24,8 @@ spec:
                 name: audiobookshelf-configmap
             # - secretRef:
             #     name: ld-credentials-env
-          # ports:
-          #   - containerPort: 3005
+          ports:
+            - containerPort: 3005
           # volumeMounts:
           #   - mountPath: "/etc/audiobookshelf/data"
           #     name: audiobookshelf-data
