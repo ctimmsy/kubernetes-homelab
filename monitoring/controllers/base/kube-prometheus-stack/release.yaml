@@ -30,19 +30,12 @@ spec:
           kind: PrometheusRule
   values:
     grafana:
-      adminPassword: mischa
       ingress:
         enabled: true
         ingressClassName: traefik
-        ## Hostnames.
-        ## Must be provided if Ingress is enable.
-        ##
-        # hosts:
-        #   - grafana.domain.com
         hosts: 
           - grafana.ctimms.net
 
-        ## Path for grafana ingress
         path: /
         tls: 
           - secretName: tls-grafana
