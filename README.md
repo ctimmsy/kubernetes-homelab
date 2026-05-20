@@ -14,11 +14,11 @@ update self-hosted services in my homelab.
 
 ### Features
 
-🔹Installing and managing applications using GitOps
-🔹Automatic rolling upgrade for OS and Kubernetes
-🔹Automatically update apps using FluxCD (with approval)
-🔹Expose services to the internet securely with Cloudflare Tunnel
-🔹Monitoring and alerting (with kube-prometheus-stack)
+- Installing and managing applications using GitOps
+- Automatic rolling upgrade for OS and Kubernetes
+- Automatically update apps using FluxCD (with approval)
+- Expose services to the internet securely with Cloudflare Tunnel
+- Monitoring and alerting (with kube-prometheus-stack)
 
 Tech stack
 
