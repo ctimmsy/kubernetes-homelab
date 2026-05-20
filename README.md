@@ -20,8 +20,6 @@ update self-hosted services in my homelab.
 - Expose services to the internet securely with Cloudflare Tunnel
 - Monitoring and alerting (with kube-prometheus-stack)
 
-Tech stack
-
 ### Tech stack
 
 <table>
