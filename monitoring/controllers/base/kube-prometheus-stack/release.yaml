@@ -33,11 +33,11 @@ spec:
       ingress:
         enabled: true
         ingressClassName: traefik
-        hosts: 
+        hosts:
           - grafana.ctimms.net
 
         path: /
-        tls: 
+        tls:
           - secretName: tls-grafana
             hosts:
-            - grafana.example.com
+              - grafana.ctimms.net
