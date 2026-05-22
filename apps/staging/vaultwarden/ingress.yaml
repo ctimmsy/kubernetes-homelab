@@ -5,7 +5,8 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - http:
+    - host: "vault.ctimms.net"
+      http:
         paths:
           - path: /
             pathType: Prefix
