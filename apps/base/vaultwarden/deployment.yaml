@@ -21,6 +21,9 @@ spec:
           image: vaultwarden/server:1.36.0
           ports:
             - containerPort: 80
+          env:
+            - name: DOMAIN
+              value: "https://vault.ctimms.net"
           volumeMounts:
             - mountPath: "/data"
               name: vaultwarden-data
