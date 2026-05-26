@@ -24,8 +24,9 @@ spec:
     firefly-db:
       configs:
         TZ: "Europe/London"
-      accessModes:
-        - ReadWriteOnce
+      storage:
+        accessModes:
+          - ReadWriteOnce
 
     firefly-iii:
       config:
