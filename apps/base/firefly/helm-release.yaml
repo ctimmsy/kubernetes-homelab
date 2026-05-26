@@ -1,0 +1,34 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: firefly
+  namespace: firefly
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: firefly-iii/firefly-iii-stack
+      version: "0.9.3"
+      sourceRef:
+        kind: HelmRepository
+        name: firefly
+        namespace: firefly
+      interval: 12h
+  install:
+    crds: Create
+  upgrade:
+    crds: CreateReplace
+  driftDetection:
+    mode: enabled
+  values:
+    firefly-db:
+      configs:
+        TZ: Europe/London
+
+    firefly-iii:
+      # -- Set to false to not deploy Firefly III
+      enabled: true
+      config:
+        env:
+          DEFAULT_LANGUAGE: "en_GB"
+          TZ: "Europe/London"
