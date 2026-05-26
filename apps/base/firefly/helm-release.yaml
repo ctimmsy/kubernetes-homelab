@@ -7,11 +7,11 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: firefly-iii/firefly-iii-stack
+      chart: firefly-iii-stack
       version: "0.9.3"
       sourceRef:
         kind: HelmRepository
-        name: firefly
+        name: firefly-iii
         namespace: firefly
       interval: 12h
   install:
