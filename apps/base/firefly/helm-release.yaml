@@ -23,7 +23,7 @@ spec:
   values:
     firefly-db:
       configs:
-        TZ: "Europe/London"
+        TZ: Europe/London
       storage:
         accessModes:
           - ReadWriteOnce
