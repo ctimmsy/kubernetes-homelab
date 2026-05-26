@@ -25,6 +25,7 @@ spec:
       configs:
         TZ: Europe/London
       storage:
+        class: local-path
         accessModes:
           - ReadWriteOnce
 
