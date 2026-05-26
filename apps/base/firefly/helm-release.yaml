@@ -11,7 +11,7 @@ spec:
       version: "0.9.3"
       sourceRef:
         kind: HelmRepository
-        name: firefly-iii
+        name: firefly
         namespace: firefly
       interval: 12h
   install:
