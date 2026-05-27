@@ -34,7 +34,3 @@ spec:
         env:
           DEFAULT_LANGUAGE: "en_GB"
           TZ: "Europe/London"
-    importer:
-      config:
-        env:
-          FIREFLY_III_URL: "http://ffly.ctimms.net"
