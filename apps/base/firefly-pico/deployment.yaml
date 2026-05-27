@@ -18,7 +18,7 @@ spec:
         fsGroup: 82
       containers:
         - name: firefly-pico
-          image: cioraneanu/firefly-pico:1.10.0
+          image: cioraneanu/firefly-pico:1.10.6
           env:
             - name: FIREFLY_URL
               value: "http://ffly.ctimms.net"
