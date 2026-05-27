@@ -18,7 +18,7 @@ spec:
           command:
             - sh
             - -c
-            - chown -R 33:33 /var/www/html/bootstrap/cache
+            - chown -R 1000:1000 /var/www/html/bootstrap/cache
           securityContext:
             runAsUser: 0
           volumeMounts:
