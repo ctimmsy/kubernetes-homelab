@@ -5,3 +5,4 @@ resources:
   - audiobookshelf
   - vaultwarden
   - firefly
+  - firefly-pico
