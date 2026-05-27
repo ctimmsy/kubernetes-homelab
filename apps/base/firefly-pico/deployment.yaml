@@ -20,7 +20,8 @@ spec:
         - name: firefly-pico
           image: cioraneanu/firefly-pico:1.10.0
           env:
-            - FIREFLY_URL: "http://ffly.ctimms.net"
+            - name: FIREFLY_URL
+              value: "http://ffly.ctimms.net"
           ports:
             - containerPort: 80
           volumeMounts:
