@@ -34,3 +34,4 @@ spec:
         env:
           DEFAULT_LANGUAGE: "en_GB"
           TZ: "Europe/London"
+          APP_URL: "http://ffly.ctimms.net"
