@@ -37,4 +37,4 @@ spec:
     importer:
       config:
         env:
-          FIREFLY_III_URL: http://ffly.ctimms.net
+          FIREFLY_III_URL: "http://ffly.ctimms.net"
