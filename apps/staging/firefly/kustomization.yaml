@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: firefly
 resources:
   - ../../base/firefly/
+  - ingress.yaml
