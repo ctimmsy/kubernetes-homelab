@@ -16,3 +16,22 @@ spec:
                 name: firefly-firefly-iii
                 port:
                   number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: firefly-importer
+  namespace: firefly
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: "fflyimp.ctimms.net"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: firefly-importer
+                port:
+                  number: 80
