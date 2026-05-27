@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: firefly-pico
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: firefly-pico
+  template:
+    metadata:
+      labels:
+        app: firefly-pico
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 82
+        fsGroup: 82
+      containers:
+        - name: firefly-pico
+          image: cioraneanu/firefly-pico:1.10.0
+          env:
+            - FIREFLY_URL=http://ffly.ctimms.net
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: "/var/www/html/database/data"
+              name: firefly-pico-data
+          securityContext:
+            allowPrivilegeEscalation: false
+      volumes:
+        - name: firefly-pico-data
+          persistentVolumeClaim:
+            claimName: firefly-pico-data-pvc
