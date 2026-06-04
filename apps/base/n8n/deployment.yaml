@@ -25,9 +25,9 @@ spec:
             - name: TZ
               value: "Europe/London"
             - name: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
-              value: true
+              value: "true"
             - name: N8N_RUNNERS_ENABLED
-              value: true
+              value: "true"
           ports:
             - containerPort: 5678
           volumeMounts:
