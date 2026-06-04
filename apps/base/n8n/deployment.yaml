@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: n8n
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: n8n
+  template:
+    metadata:
+      labels:
+        app: n8n
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+        - name: n8n
+          image: docker.n8n.io/n8nio/n8n
+          env:
+            - name: GENERIC_TIMEZONE
+              value: Europe/London
+            - name: TZ
+              value: Europe/London
+            - name: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+              value: true
+            - name: N8N_RUNNERS_ENABLED
+              value: true
+
+          envFrom:
+            - secretRef:
+                name: ld-credentials-env
+          ports:
+            - containerPort: 5678
+          volumeMounts:
+            - mountPath: "/home/node/.n8n"
+              name: n8n-data
+          securityContext:
+            allowPrivilegeEscalation: false
+      volumes:
+        - name: n8n-data
+          persistentVolumeClaim:
+            claimName: n8n-data-pvc

@@ -6,3 +6,4 @@ resources:
   - vaultwarden
   - firefly
   - firefly-pico
+  - n8n
