@@ -19,15 +19,9 @@ spec:
       containers:
         - name: n8n
           image: docker.n8n.io/n8nio/n8n
-          env:
-            - name: GENERIC_TIMEZONE
-              value: "Europe/London"
-            - name: TZ
-              value: "Europe/London"
-            - name: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
-              value: "true"
-            - name: N8N_RUNNERS_ENABLED
-              value: "true"
+          envFrom:
+            - configMapRef:
+                name: n8n-envs
           ports:
             - containerPort: 5678
           volumeMounts:
