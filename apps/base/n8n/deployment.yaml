@@ -28,10 +28,6 @@ spec:
               value: true
             - name: N8N_RUNNERS_ENABLED
               value: true
-
-          envFrom:
-            - secretRef:
-                name: ld-credentials-env
           ports:
             - containerPort: 5678
           volumeMounts:
