@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: firefly-importer-configmap
+data:
+  FFLY_URL: "https://ffly.ctimms.net/api/v1"
+  SQLITE_PATH: "/data/database.db"
