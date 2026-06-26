@@ -14,7 +14,7 @@ spec:
             fsGroup: 999
           containers:
             - name: firefly-importer
-              image: ghcr.io/ctimmsy/firefly-importer:sha256-d1f8f5193e4f2466aebb6050c34582fe1640b3b5741fd053c04cc9a7873db22d
+              image: ghcr.io/ctimmsy/firefly-importer:main
               imagePullPolicy: IfNotPresent
               envFrom:
                 - configMapRef:
