@@ -4,4 +4,5 @@ metadata:
   name: firefly-importer-configmap
 data:
   FFLY_URL: "https://ffly.ctimms.net/api/v1"
+  FFLY_ACCOUNT_ID: "1"
   SQLITE_PATH: "/data/database.db"
