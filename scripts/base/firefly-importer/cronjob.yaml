@@ -28,5 +28,4 @@ spec:
             - name: firefly-importer-script-data
               persistentVolumeClaim:
                 claimName: firefly-importer-script-db-storage-claim
-
           restartPolicy: OnFailure
