@@ -4,6 +4,7 @@ metadata:
   name: firefly-importer-script
 spec:
   schedule: "*/15 * * * *"
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
       template:
