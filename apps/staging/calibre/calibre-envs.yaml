@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: calibre-configmap
 data:
-  - PUID=1000
-  - PGID=1000
-  - TZ=Europe/London
+  - PUID: 1000
+  - PGID: 1000
+  - TZ: Europe/London
