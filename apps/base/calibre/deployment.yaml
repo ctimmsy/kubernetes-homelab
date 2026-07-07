@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calibre
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calibre
+  template:
+    metadata:
+      labels:
+        app: calibre
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+        - name: calibre
+          image: linuxserver/calibre:9.11.0
+          envFrom:
+            - configMapRef:
+                name: calibre-configmap
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - mountPath: "/config"
+              name: calibre-config
+          securityContext:
+            allowPrivilegeEscalation: false
+
+        # - name: calibre-web
+        #   image:
+        #   envFrom:
+        #     - configMapRef:
+        #         name: calibre-configmap
+        #   ports:
+        #     - containerPort: 3005
+        #   volumeMounts:
+        #     - mountPath: "/config"
+        #       name: calibre-config
+        #   securityContext:
+        #     allowPrivilegeEscalation: false
+
+      volumes:
+        - name: calibre-config
+          persistentVolumeClaim:
+            claimName: calibre-storage-claim
