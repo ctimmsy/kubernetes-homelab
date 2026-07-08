@@ -26,20 +26,26 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
 
-        # - name: calibre-web
-        #   image:
-        #   envFrom:
-        #     - configMapRef:
-        #         name: calibre-configmap
-        #   ports:
-        #     - containerPort: 3005
-        #   volumeMounts:
-        #     - mountPath: "/config"
-        #       name: calibre-config
-        #   securityContext:
-        #     allowPrivilegeEscalation: false
+        - name: calibre-web
+          image: linuxserver/calibre-web:0.6.26
+          envFrom:
+            - configMapRef:
+                name: calibre-web-configmap
+          ports:
+            - containerPort: 8083
+          volumeMounts:
+            - mountPath: "/books"
+              subPath: "Calibre Library"
+              name: calibre-config
+            - mountPath: "/config"
+              name: calibre-web-config
+          securityContext:
+            allowPrivilegeEscalation: false
 
       volumes:
         - name: calibre-config
           persistentVolumeClaim:
             claimName: calibre-storage-claim
+        - name: calibre-web-config
+          persistentVolumeClaim:
+            claimName: calibre-web-storage-claim

@@ -16,3 +16,22 @@ spec:
                 name: calibre
                 port:
                   number: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: calibre
+  namespace: calibre
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: "reader.ctimms.net"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: calibre
+                port:
+                  number: 8083

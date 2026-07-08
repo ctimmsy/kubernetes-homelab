@@ -6,3 +6,12 @@ data:
   PUID: "1000"
   PGID: "1000"
   TZ: "Europe/London"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: calibre-web-configmap
+data:
+  PUID: "1000"
+  PGID: "1000"
+  TZ: "Europe/London"
