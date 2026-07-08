@@ -8,5 +8,15 @@ spec:
     app: calibre
   ports:
     - port: 8080
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: calibre-web
+spec:
+  selector:
+    app: calibre
+  ports:
     - port: 8083
   type: ClusterIP

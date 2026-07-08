@@ -32,6 +32,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: calibre
+                name: calibre-web
                 port:
                   number: 8083
