@@ -20,6 +20,25 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  name: calibre-wireless-server
+  namespace: calibre
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: "wireless.calibre.ctimms.net"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: calibre
+                port:
+                  number: 9090
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
   name: calibre-web
   namespace: calibre
 spec:
