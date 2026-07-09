@@ -20,6 +20,7 @@ spec:
                 name: calibre-configmap
           ports:
             - containerPort: 8080
+            - containerPort: 9090
           volumeMounts:
             - mountPath: "/config"
               name: calibre-config

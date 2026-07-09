@@ -13,6 +13,17 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  name: calibre-wireless-server
+spec:
+  selector:
+    app: calibre
+  ports:
+    - port: 9090
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
   name: calibre-web
 spec:
   selector:
