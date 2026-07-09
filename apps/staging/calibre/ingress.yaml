@@ -26,7 +26,7 @@ spec:
   ingressClassName: traefik
   rules:
     - host: "wireless.calibre.ctimms.net"
-      http:
+      https:
         paths:
           - path: /
             pathType: Prefix
