@@ -7,10 +7,11 @@ update self-hosted services in my homelab.
 
 ### Hardware
 
-- Apple MacBook Pro (2019) running Ubuntu Server
-  - Intel Core i9
-  - 16GB RAM
-  - 1TB SSD
+Apple MacBook Pro (2019) running Ubuntu Server
+
+- CPU: Intel Core i9
+- Memory: 16GB DDR4
+- Storage: 1TB SSD
 
 ### Features
 
@@ -69,3 +70,5 @@ update self-hosted services in my homelab.
         <td>Template-free customization of Kubernetes manifests</td>
     </tr>
 </table>
+
+### Security
