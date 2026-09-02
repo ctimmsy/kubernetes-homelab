@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: calibre
-          image: linuxserver/calibre:9.11.0
+          image: linuxserver/calibre:9.14.0
           envFrom:
             - configMapRef:
                 name: calibre-configmap
